@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Checklist 101 </title>
+</head>
+<body>
+       <!-- Bubbles -->
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    
+    <!-- Hello Kitty GIF -->
+    <img src="https://media1.giphy.com/media/exC95rjkttGXhfhcAq/200w.gif" class="hello-kitty" alt="Hello Kitty">
+    
+    <!-- Kero Kero GIF -->
+    <img src="https://media.giphy.com/media/cQSjIBgUC2NbMKEm9q/giphy.gif" class="kuronomi" alt="kuronomi">
+    
+    <h1>Chicago Trip Checklist</h1>
+    
+    <div class="checklist-container">
+        <div class="packing-section" id="not-packed">
+            <h2 class="section-title">Not Packed Yet </h2>
+            <ul class="checklist" id="unpacked-items">
+                <li class="checklist-item">
+                    <input type="checkbox" id="item1" onchange="moveItem(this)">
+                    <label for="item1">Money(Cash,Card,ApplePay)</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="item2" onchange="moveItem(this)">
+                    <label for="item2">Small backpack or tote bag for daily outings</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="item3" onchange="moveItem(this)">
+                    <label for="item3"> 3 outfits and shoes for day 1,2,and 3 </label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="item4" onchange="moveItem(this)">
+                    <label for="item4">Earplugs,Sunscreen,Emergency Clothes</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="item5" onchange="moveItem(this)">
+                    <label for="item5">Travel documents(ID's,Train Tickets, Passports)</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="item6" onchange="moveItem(this)">
+                    <label for="item6">Electronics(Portable charger,Headpones etc.)</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="item7" onchange="moveItem(this)">
+                    <label for="item7">Toiletries (toothbrush,paste,shampoo,conditioner etc.) </label>
+                <li class="checklist-item">
+                    <input type="checkbox" id="item8" onchange="moveItem(this)">
+                    <label for="item8">Optional(Blanket,Swimsuit,Travel Pillow)</label>
+                </li>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="packing-section" id="already-packed">
+            <h2 class="section-title">Already Packed</h2>
+            <ul class="checklist" id="packed-items">
+                <!-- Items will move here when checked -->
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function moveItem(checkbox) {
+            const item = checkbox.parentElement;
+            const packedList = document.getElementById('packed-items');
+            const unpackedList = document.getElementById('unpacked-items');
+            
+            if (checkbox.checked) {
+                item.classList.add('checked');
+                packedList.appendChild(item);
+            } else {
+                item.classList.remove('checked');
+                unpackedList.appendChild(item);
+            }
+        }
+    </script>
+</body>
+</html>
